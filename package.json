@@ -1,0 +1,29 @@
+{
+  "name": "mbroumsadja",
+  "version": "1.0.0",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server.js",
+    "dev": "nodemon server.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^1.7.9",
+    "body-parser": "^1.20.3",
+    "canvas-confetti": "^1.9.3",
+    "confetti": "^2.0.3",
+    "dotenv": "^16.4.7",
+    "ejs": "^3.1.10",
+    "express": "^4.21.2",
+    "express-session": "^1.18.1",
+    "mariadb": "^3.4.0",
+    "newsapi": "^2.4.1",
+    "nodemon": "^3.1.9",
+    "sequelize": "^6.37.5"
+  },
+  "keywords": [],
+  "description": ""
+}

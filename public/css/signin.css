@@ -1,0 +1,127 @@
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+}
+
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    box-shadow: 0px 8px 7px gray;
+    border-radius: 20px;
+    padding: 0 4rem;
+    font-family: system-ui;
+    background-color: white;
+}
+h2{
+   font-size: 1.5rem;
+}
+form{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+form input{
+    border: none;
+    border-radius: 5px;
+    background: gainsboro;
+    height: 1.2rem;
+    padding:  .5rem 1rem;
+    width: 20rem;
+    margin-bottom: .2rem;
+    font-family: system-ui;
+    font-size: 16px;
+    text-transform: capitalize;
+    font-weight: 300;
+}
+form input:focus{
+    outline: none;
+}
+form input::placeholder{
+    font-size: 13px;
+    font-family: 'Times New Roman', Times, serif;
+}
+form label{
+    margin-bottom: .3rem;
+    color:rgb(0, 0, 14)
+}
+form button{
+    margin-top: .7rem;
+    padding: .1rem 0;
+    font-size: 15px;
+    border: none;
+    padding: .2rem 0;
+    border-radius: 5px;
+    margin-left: 4rem;
+    margin-right: 4rem;
+}
+form button:hover{
+    background: gray;
+    color: white;
+}
+
+label{
+    font-size: 13px;
+} 
+p{
+    font-size: 13px;
+} 
+.connec{
+    margin-bottom: 1rem;
+
+}
+.connec button{
+    width: 32px;
+    height: 32px;
+    border: none;
+    border-radius: 50%;
+    transition: ease;
+    animation: back  1s ease-in-out;
+}
+.connec button:hover{
+    background: gray;
+}
+.connec button:nth-child(1){
+    animation-delay: 0s;
+}
+.connec button:nth-child(2){
+    animation-delay: 1s;
+}
+.connec button:nth-child(3){
+    animation-delay: 2s;
+}
+.connec button:nth-child(4){
+    animation-delay: 3s;
+}
+@keyframes back {
+    0%{
+        background-color: gray;
+    }
+    25%{
+        background-color: gainsboro;
+    }
+    50%{
+        background-color: gray;
+    }
+100%{
+    background-color: gray;
+}
+}
+
+@media (max-width:375px) {
+    .container{
+      width: 50vw;
+      margin-bottom:20vh;
+    }
+    form input{
+        width: 70vw;
+    }
+    p{
+        font-size: 12px;
+    }
+}
