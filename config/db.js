@@ -38,4 +38,4 @@ sequelize
     .then(() => console.log('Connexion à PostgreSQL réussie avec Sequelize !'))
     .catch(err => console.error('Erreur de connexion à PostgreSQL :', err));
 
-module.exports = sequelize;
+export default sequelize;
