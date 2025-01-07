@@ -4,7 +4,7 @@ import { saveUser, verifierUser } from "../controller/Acontroller.js";
 const Aroute = express.Router();
 
 Aroute.get('/signin',(req, res) =>{
-    const message = req.session.msg;
+    const message = req.body.msg;
     res.render('signin',{message:message});
 });
 

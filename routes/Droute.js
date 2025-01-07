@@ -3,7 +3,7 @@ import express from "express";
 const Droute = express.Router();
 
 Droute.get('/',(req, res) =>{
-    const session = req.session.user;
+    const session = req.body.user;
 
     const Articles = [
       {
