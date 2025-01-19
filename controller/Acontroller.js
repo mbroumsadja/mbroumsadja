@@ -1,4 +1,3 @@
-import { where } from "sequelize";
 import User from "../models/user.js";
 
 export const saveUser = async (req, res , next) =>{
@@ -32,4 +31,19 @@ export const verifierUser = async (req, res , next) =>{
         res.cookie("msg", `Le nom d'utilisateur ou l'email est deja pris`,{maxAge:10000000}); 
         res.redirect('/signin')
     }
+
+};
+
+export const AllUser = async (req, res , next) =>{
+    try {
+        const users =  await User.findAll({attributes: ['username','email']});
+        res.cookie('user',users,{maxAge:10000000});
+        next()
+        return  users;
+    
+    } catch (error) {
+        console.log(`erreur lors de la recuperation des utilisateurs`,error);
+        res.redirect('/')
+    }
+
 }

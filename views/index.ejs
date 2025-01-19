@@ -18,32 +18,9 @@
             <a href="/logout">logout</a>
         </button>
      </div>
-            <% } else { %>
-<div class="discon">
-    <span>Vous n'êtes pas connecté</span>
-    <div class="link">
-        <button type="button" class="feedback">
-            <a href="/signin">Login</a>
-        </button>
-        <button type="button" class="feedback">
-            <a href="/signup">signup</a>
-        </button>
-       </div>
-    </div>
-</div>
-            <% } %>
 
 
-    </header>
-
-    <section class="social">
-            <li><a href="#">Github</a></li>
-            <li><a href="#">Linkin</a></li>
-            <li><a href="#">Project</a></li>
-            <li><a href="#">WhatsApp</a></li>
-    </section>
-
-    <main>
+     <main>
         <div class="container">
             <% if (Articles && Articles.length > 0) { %>
                     <% Articles.forEach(article => { %>
@@ -73,12 +50,35 @@
         </div>
     </main>
 
+
+            <% } else { %>
+<div class="discon">
+
+    <span>Connectez vous?</span>
+    <div class="link">
+        <button type="button" class="feedback">
+            <a href="/signin">Login</a>
+        </button>
+        <button type="button" class="feedback">
+            <a href="/signup">signup</a>
+        </button>
+       </div>
+    </div>
+</div>
+            <% } %>
+
+
+    </header>
+
     <section class="social">
-        <li><a href="#">Github</a></li>
-        <li><a href="#">Linkin</a></li>
-        <li><a href="#">Project</a></li>
+            <li><a href="/user"> Les Utilisteur Connecte</a></li>
+    </section>
+
+    <section class="social">
+        <li><a href="https://github.com/mbroumsadja">Github</a></li>
         <li><a href="#">WhatsApp</a></li>
 </section>
+
     <script src="js/script.js"></script>
 </body>
 </html>
