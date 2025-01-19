@@ -3,7 +3,6 @@ import bodyParser from "body-parser";
 import dotenv from 'dotenv';
 import Droute from "./routes/Droute.js";
 import Aroute from "./routes/Aroute.js";
-import isadmin from "./middleware/isAdmin.js";
 import { fileURLToPath } from 'url';
 import { dirname } from 'node:path';
 import path from 'path';
@@ -26,7 +25,6 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(Droute);
 app.use(Aroute);
-app.use('/admin',isadmin);
 
 app.use((req, res, next) => {
     res.header('Access-Control-Allow-Origin', '*');

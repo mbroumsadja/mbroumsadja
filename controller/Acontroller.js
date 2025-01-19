@@ -23,7 +23,7 @@ export const verifierUser = async (req, res , next) =>{
         const users =  await User.findOne({
             where:{password}
         });
-        res.cookie("username", users.username,{maxAge:309600000});  
+        res.cookie("username", req.body.username,{maxAge:30960000});  
         return  res.redirect('/');
     
     } catch (error) {
@@ -37,7 +37,7 @@ export const verifierUser = async (req, res , next) =>{
 export const AllUser = async (req, res , next) =>{
     try {
         const users =  await User.findAll();
-        res.cookie('user',users,{maxAge:309600000});
+        res.cookie('user',users,{maxAge:30960000});
         next()
         return  users;
     

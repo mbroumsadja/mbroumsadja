@@ -6,12 +6,13 @@ import { AllUser } from "../controller/Acontroller.js";
 Droute.get('/',async(req, res) =>{
 
     const session = req.cookies.username;
-
-      const Articles = await feetchArticles();
+    const refuse = req.cookies.message;
+    const Articles = await feetchArticles();
 
     res.render('index',{
         session:session,
         Articles:Articles,
+        refuse:refuse,
     })
 });
 

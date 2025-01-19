@@ -5,6 +5,10 @@ body{
     flex-direction: column;
     min-height: 100vh;
     margin: 0;
+    background: url(/img/background.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
 }
 
 .container{
@@ -12,11 +16,12 @@ body{
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    box-shadow: 0px 8px 7px gray;
+    box-shadow: 0px 8px 7px;
     border-radius: 20px;
     padding: 0 4rem;
     font-family: system-ui;
     background-color: white;
+
 }
 h2{
    font-size: 1.5rem;
