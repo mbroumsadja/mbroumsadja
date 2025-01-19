@@ -5,13 +5,14 @@ export const saveUser = async (req, res , next) =>{
     try {
         const user =  await User.create(req.body);
 
-        req.cookie.user = user.username;
-        req.cookie.role = user.role;
+        res.cookie("username", user.username ,{maxAge:10000000});
+        res.cookie("role", user.role,{maxAge:10000000});
         res.redirect('/');
         return
     
     } catch (error) {
-        
+        res.redirect('/signup')
+        res.cookie("msg", `Le nom d'utilisateur ou l'email est deja pris`,{maxAge:10000000}); 
         console.log(`erreur lors de l'enregistrement`,error)
     }
 }
@@ -22,13 +23,13 @@ export const verifierUser = async (req, res , next) =>{
         const users =  await User.findOne({
             where:{password}
         });
-        req.body.user = users.username;
+        res.cookie("username", users.username,{maxAge:10000000});
         res.redirect('/');
         return
     
     } catch (error) {
         console.log(`erreur lors de l'authentification`,error);
-        req.body.msg = `Le mots de passe ou le nom utilisateur n'est pas correct veillez reessayer`
+        res.cookie("msg", `Le nom d'utilisateur ou l'email est deja pris`,{maxAge:10000000}); 
         res.redirect('/signin')
     }
 }

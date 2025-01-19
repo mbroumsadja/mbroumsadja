@@ -4,7 +4,7 @@ import { saveUser, verifierUser } from "../controller/Acontroller.js";
 const Aroute = express.Router();
 
 Aroute.get('/signin',(req, res) =>{
-    const message = req.body.msg;
+    const message = req.cookies.msg;
     res.render('signin',{message:message});
 });
 
@@ -13,7 +13,7 @@ Aroute.get('/signup',(req, res) =>{
 });
 
 Aroute.get('/logout',(req, res) =>{
-    req.session.destroy();
+    res.clearCookie('username');
     res.redirect('/signin')
 });
 

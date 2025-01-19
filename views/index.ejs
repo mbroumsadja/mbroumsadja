@@ -7,67 +7,78 @@
     <title>mbroumsadja</title>
 </head>
 <body>
+
     <header>
-      <div class="user">
-        <button type="button" class="Utilisateur"></button>
-        <% if (session) {%>
-            <h4><%= session %></h4>
-         <%} else { %>
-             <span>vous n'etes pas connecter</span>
-         <% } %>
-      </div>
-            <button type="button" class="feetback"><a href="/signin">login</a></button>
+        <div class="user">
+
+            <% if (session) { %>
+     <div class="con">
+        <h4>Bienvenue, <%= session %></h4>
+        <button type="button" class="feedback">
+            <a href="/logout">logout</a>
+        </button>
+     </div>
+            <% } else { %>
+<div class="discon">
+    <span>Vous n'êtes pas connecté</span>
+    <div class="link">
+        <button type="button" class="feedback">
+            <a href="/signin">Login</a>
+        </button>
+        <button type="button" class="feedback">
+            <a href="/signup">signup</a>
+        </button>
+       </div>
+    </div>
+</div>
+            <% } %>
+
+
     </header>
-    <section class="search">
-        <!-- <button type="button" class="searchIcon"></button> -->
-        <input type="text" name="" id=""  placeholder=" Rechercher ici ...">
-        <button type="button" class="searchbtn">search</button>
+
+    <section class="social">
+            <li><a href="#">Github</a></li>
+            <li><a href="#">Linkin</a></li>
+            <li><a href="#">Project</a></li>
+            <li><a href="#">WhatsApp</a></li>
     </section>
-    <section class="navBar"> 
-        <li><a href="/">forum</a></li>
-        <li><a href="/">IA</a></li>
-        <li><a href="/">Node</a></li>
-        <li><a href="/">Python</a></li>
-        <li><a href="/">SQL</a></li>
-    </section>
+
     <main>
-         
         <div class="container">
-            <% if (!Articles) {%>
-                <div class="news-container">
-                    <% Articles.forEach(Articles => { %>
-                        <div class="Articles-card">
-                            <img src="<%= Articles.urlToImage %>" alt="<%= Articles.title %>" class="Articles-image">
-                            <div class="Articles-content">
+            <% if (Articles && Articles.length > 0) { %>
+                    <% Articles.forEach(article => { %>
+                        <div class="article-card">
+                            <!-- Image de l'article -->
+                            <img src="<%= article.urlToImage %>" alt="<%= article.title %>" class="article-image" width="400" height="400">
+                            <div class="article-content">
+                                <!-- Source et date -->
                                 <div class="source-date">
-                                    <span><%= Articles.source.name %></span>
-                                    <span><%= new Date(Articles.publishedAt).toLocaleDateString() %></span>
+                                    <span><%= article.source.name %></span>
+                                    <span><%= new Date(article.publishedAt).toLocaleDateString() %></span>
                                 </div>
-                                <h2 class="title"><%= Articles.title %></h2>
-                                <p class="description"><%= Articles.description %></p>
-                                <p class="author">By <%= Articles.author %></p>
+                                <!-- Titre et description -->
+                                <h2 class="title"><%= article.title %></h2>
+                                <p class="description"><%= article.description %></p>
+                                <!-- Auteur -->
+                                <% if (article.author) { %>
+                                    <p class="author">By <%= article.author %></p>
+                                <% } %>
                             </div>
                         </div>
                     <% }); %>
-                </div>
-             <%} else { %>
-                <h1>
-                    BIENVENUE DANS MON BLOG
-                 </h1>
-             <% } %>
+            <% } else { %>
+                <h1>Bienvenue dans mon blog</h1>
+                <p>Aucun article disponible pour le moment.</p>
+            <% } %>
         </div>
     </main>
 
-    <!-- <a href="/signup">signup</a>
-    <a href="/signin">signin</a>
-    <a href="/logout">logout</a>
-    <a href="/admin">admin</a> -->
-    <footer>
-        <li><a href="#">linkind</a></li>
+    <section class="social">
         <li><a href="#">Github</a></li>
-        <li><a href="#">Chatbot</a></li>
-        <li><a href="#">Wathsapp</a></li>
-    </footer>
-<script src="js/script.js"></script>
+        <li><a href="#">Linkin</a></li>
+        <li><a href="#">Project</a></li>
+        <li><a href="#">WhatsApp</a></li>
+</section>
+    <script src="js/script.js"></script>
 </body>
 </html>

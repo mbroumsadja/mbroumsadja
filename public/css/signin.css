@@ -59,10 +59,10 @@ form button{
     border-radius: 5px;
     margin-left: 4rem;
     margin-right: 4rem;
+    cursor: pointer;
 }
 form button:hover{
-    background: gray;
-    color: white;
+    background: rgba(128, 128, 128, 0.329);
 }
 
 label{
@@ -124,4 +124,41 @@ p{
     p{
         font-size: 12px;
     }
+}
+
+
+.retour{
+position: absolute;
+top: 0;
+right: 0;
+}
+.retour button{
+    border: none;
+    margin: 1rem;
+    border-radius: 5px;
+    padding: .3rem 1rem;
+    font-size: 16px;
+}
+.retour button a{
+    text-decoration: none;
+    color: black
+}
+
+.retours{
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.retours button{
+    border: none;
+    margin: 1rem;
+    border-radius: 5px;
+    padding: .3rem 1rem;
+    font-size: 16px;
+}
+
+.retours button a{
+    text-decoration: none;
+    color: black
 }
