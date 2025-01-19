@@ -24,4 +24,5 @@ Droute.get('/user',AllUser,(req, res) =>{
     res.render('utilisateur',{users:users});
 });
 
+
 export default Droute;

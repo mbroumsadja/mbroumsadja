@@ -6,13 +6,14 @@ export const saveUser = async (req, res , next) =>{
 
         res.cookie("username", user.username ,{maxAge:10000000});
         res.cookie("role", user.role,{maxAge:10000000});
-        res.redirect('/');
-        return
+       
+        return  res.redirect('/');
     
     } catch (error) {
-        res.redirect('/signup')
-        res.cookie("msg", `Le nom d'utilisateur ou l'email est deja pris`,{maxAge:10000000}); 
-        console.log(`erreur lors de l'enregistrement`,error)
+      
+        res.cookie("msg", `Le nom d'utilisateur ou l'email existe deja`,{maxAge:10000000}); 
+        console.log(`erreur lors de l'enregistrement`,error);
+        res.redirect('/signup');
     }
 }
 
@@ -22,22 +23,21 @@ export const verifierUser = async (req, res , next) =>{
         const users =  await User.findOne({
             where:{password}
         });
-        res.cookie("username", users.username,{maxAge:10000000});
-        res.redirect('/');
-        return
+        res.cookie("username", users.username,{maxAge:309600000});  
+        return  res.redirect('/');
     
     } catch (error) {
         console.log(`erreur lors de l'authentification`,error);
-        res.cookie("msg", `Le nom d'utilisateur ou l'email est deja pris`,{maxAge:10000000}); 
+        res.cookie("msg", `le password ou l'email entre est incorrect `,{maxAge:10000000}); 
         res.redirect('/signin')
     }
 
-};
+}
 
 export const AllUser = async (req, res , next) =>{
     try {
-        const users =  await User.findAll({attributes: ['username','email']});
-        res.cookie('user',users,{maxAge:10000000});
+        const users =  await User.findAll();
+        res.cookie('user',users,{maxAge:309600000});
         next()
         return  users;
     

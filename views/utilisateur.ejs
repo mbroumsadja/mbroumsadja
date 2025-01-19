@@ -52,15 +52,16 @@
     <table border="1">
         <thead>
             <tr>
-                <th>Nom</th>
+                <th>Rang</th>
                 <th>Email</th>
             </tr>
         </thead>
         <tbody>
             <% users.forEach(function(user) { %>
                 <tr>
+                    <td><%= user.id %></td>
                     <td><%= user.username %></td>
-                    <td><%= user.email %></td>
+                    
                 </tr>
             <% }); %>
         </tbody>
