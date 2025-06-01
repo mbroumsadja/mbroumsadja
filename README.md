@@ -1,6 +1,32 @@
-👋 Bonjour, je suis Mbroumsadja Emmanuel, un développeur web passionné par la créativité et l'apprentissage continu. Curieux de nature, j’aime explorer les technologies et repousser les limites du code pour donner vie à des idées innovantes.
+# 👋 [Nom du Développeur]
+## Développeur Web | En Croissance Constante
 
-💻 Je maîtrise plusieurs langages et frameworks, allant du développement système avec C et C++, au développement web avec HTML, React.js, Next.js, Vite.js, ainsi que Python et Django, nodejs, pour le back-end.
-Mon objectif est de créer des interfaces élégantes, fonctionnelles et rapides, tout en assurant une expérience utilisateur fluide.
+> *"Construire des solutions web solides avec passion et rigueur"*
 
-🎯 Que ce soit pour construire une API robuste, une application réactive ou un site web dynamique, j’aime relever de nouveaux défis et apprendre constamment pour m’améliorer.
+### 🚀 À Propos
+Développeur web avec **2-3 ans d'expérience**, passionné par la création d'applications web modernes. J'aime résoudre des problèmes concrets et apprendre de nouvelles technologies pour améliorer mes compétences au quotidien.
+
+### 💻 Stack Technique
+**Frontend:** React.js • JavaScript (ES6) • HTML5 • CSS3 • Bootstrap  
+**Backend:** Node.js • Python • Express.js  
+**Databases:** MySQL • PostgreSQL • MongoDB (bases)  
+**Outils:** Git • VS Code • Postman • Chrome DevTools  
+**Apprentissage:** TypeScript • Next.js • Docker (débutant)
+
+### 🛠️ Projets Réalisés
+✅ **Applications CRUD complètes** avec authentification  
+✅ **APIs REST** et intégration frontend  
+✅ **Sites web responsives** multi-pages  
+✅ **Intégration d'APIs tierces** (météo, paiement)  
+
+### 📚 En Apprentissage Actif
+Testing (Jest) • Déploiement (Heroku, Netlify) • Bases de données avancées • Optimisation performances
+
+### 🎯 Objectifs 2025
+- Maîtriser TypeScript et Next.js
+- Contribuer à des projets open source
+- Apprendre les fondamentaux DevOps
+
+---
+*"Chaque projet est une opportunité d'apprendre et de grandir"*  
+**🤝 Ouvert aux collaborations et mentorat !**
