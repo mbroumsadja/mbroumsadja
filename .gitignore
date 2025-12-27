@@ -14,10 +14,36 @@ yarn.lock
 .env.test
 .env.production
 
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
 # Build output
 dist/
 build/
 out/
+
+# SSL certificates
+*.pem
+*.key
+*.crt
+
+# Database files
+*.sqlite
+*.db
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS files
+.DS_Store
+Thumbs.db
 
 # IDE and editors
 .idea/

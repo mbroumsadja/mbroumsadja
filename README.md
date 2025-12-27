@@ -4,12 +4,221 @@ Un blog moderne développé avec Node.js, Express, EJS et MySQL.
 
 ## 🚀 Fonctionnalités
 
-- ✅ Affichage des articles avec pagination
+- ✅ Affichage des articles avec pagination infinie
 - ✅ Lecture d'articles individuels
 - ✅ Système de commentaires
-- ✅ Panel d'administration
+- ✅ Authentification et gestion des utilisateurs
+- ✅ Panel d'administration avec statistiques
 - ✅ Upload d'images pour les articles
 - ✅ Interface responsive
+- ✅ Sécurité renforcée pour la production
+
+## 🛠️ Installation
+
+### Prérequis
+
+- Node.js (version 18+)
+- MySQL
+- npm ou yarn
+
+### Installation des dépendances
+
+```bash
+npm install
+```
+
+### Configuration
+
+1. Copiez le fichier `.env.example` vers `.env` :
+```bash
+cp .env.example .env
+```
+
+2. Modifiez les variables d'environnement dans `.env` :
+```env
+# Base de données
+DB_HOST=localhost
+DB_USER=votre_utilisateur_mysql
+DB_PASSWORD=votre_mot_de_passe_mysql
+DB_NAME=votre_base_de_donnees
+
+# Application
+NODE_ENV=production
+PORT=3000
+SESSION_SECRET=votre_cle_secrete_très_longue_et_complexe
+
+# Logs
+LOG_LEVEL=info
+```
+
+3. Créez la base de données MySQL et exécutez le script SQL :
+```bash
+mysql -u votre_utilisateur -p votre_base_de_donnees < data/Table.sql
+```
+
+## 🚀 Démarrage
+
+### Développement
+
+```bash
+npm run dev
+```
+
+### Production
+
+```bash
+npm run prod
+```
+
+Ou directement :
+
+```bash
+NODE_ENV=production node server.js
+```
+
+## 🔒 Sécurité
+
+L'application inclut plusieurs mesures de sécurité pour la production :
+
+- **Helmet** : Protection contre les vulnérabilités XSS et autres attaques
+- **Rate Limiting** : Limitation du nombre de requêtes par IP
+- **Compression** : Compression des réponses HTTP
+- **Sessions sécurisées** : Cookies HTTP-only et sécurisés
+- **Validation des entrées** : Avec Zod
+- **Logs structurés** : Avec Winston
+
+## 📊 Monitoring
+
+Les logs sont automatiquement générés dans le dossier `logs/` :
+- `app.log` : Tous les logs de l'application
+- `error.log` : Erreurs uniquement
+
+## 🔧 Scripts disponibles
+
+- `npm run dev` : Démarrage en mode développement avec nodemon
+- `npm run prod` : Démarrage en mode production
+- `npm run lint` : Vérification du code avec ESLint
+- `npm run build` : Construction pour la production (lint + tests)
+- `npm test` : Exécution des tests
+
+## 📁 Structure du projet
+
+```
+mbroumsadja/
+├── config/
+│   └── logger.js          # Configuration des logs
+├── controllers/           # Logique métier
+│   ├── controllerAdminView.js
+│   ├── controllerArticle.js
+│   ├── controllerClient.js
+│   └── controllerCommentaire.js
+├── data/
+│   ├── config.js          # Configuration base de données
+│   └── Table.sql          # Script SQL
+├── middleware/
+│   ├── auth.js            # Authentification
+│   ├── multerConfig.js    # Upload de fichiers
+│   ├── validateArticle.js
+│   ├── validateClient.js
+│   └── validateCommentaire.js
+├── models/                # Modèles Sequelize
+│   ├── Article.js
+│   ├── Client.js
+│   ├── Commentaire.js
+│   ├── Admin.js
+│   └── init.js
+├── public/                # Assets statiques
+│   ├── admin.js
+│   ├── index.js
+│   ├── style.css
+│   └── uploads/
+├── views/                 # Templates EJS
+│   ├── admin.ejs
+│   ├── article.ejs
+│   ├── articles.ejs
+│   ├── connexion.ejs
+│   ├── index.ejs
+│   ├── inscription.ejs
+│   └── profil.ejs
+├── .env.example           # Variables d'environnement exemple
+├── .gitignore            # Fichiers à ignorer
+├── package.json
+├── route.js              # Définition des routes
+├── server.js             # Point d'entrée de l'application
+└── README.md
+```
+
+## 🌐 Déploiement
+
+### Avec PM2 (recommandé)
+
+1. Installez PM2 globalement :
+```bash
+npm install -g pm2
+```
+
+2. Créez un fichier ecosystem.config.js :
+```javascript
+module.exports = {
+  apps: [{
+    name: 'mbroumsadja-blog',
+    script: 'server.js',
+    env: {
+      NODE_ENV: 'production',
+      PORT: 3000
+    },
+    instances: 1,
+    autorestart: true,
+    watch: false,
+    max_memory_restart: '1G'
+  }]
+};
+```
+
+3. Démarrez l'application :
+```bash
+pm2 start ecosystem.config.js
+```
+
+### Avec Docker
+
+1. Créez un Dockerfile :
+```dockerfile
+FROM node:18-alpine
+
+WORKDIR /app
+
+COPY package*.json ./
+RUN npm ci --only=production
+
+COPY . .
+
+EXPOSE 3000
+
+CMD ["npm", "run", "prod"]
+```
+
+2. Construisez et exécutez :
+```bash
+docker build -t mbroumsadja-blog .
+docker run -p 3000:3000 --env-file .env mbroumsadja-blog
+```
+
+## 🤝 Contribution
+
+1. Fork le projet
+2. Créez une branche pour votre fonctionnalité (`git checkout -b feature/AmazingFeature`)
+3. Committez vos changements (`git commit -m 'Add some AmazingFeature'`)
+4. Pushez vers la branche (`git push origin feature/AmazingFeature`)
+5. Ouvrez une Pull Request
+
+## 📝 Licence
+
+Ce projet est sous licence ISC.
+
+## 📞 Support
+
+Pour toute question ou problème, ouvrez une issue sur GitHub.
 
 ## 📁 Structure du projet
 

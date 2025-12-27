@@ -16,18 +16,26 @@
   "main": "server.js",
   "scripts": {
     "dev": "nodemon server.js",
-    "start": "node server.js"
+    "start": "node server.js",
+    "build": "npm run lint && npm test",
+    "lint": "eslint . --ext .js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prod": "NODE_ENV=production node server.js"
   },
   "dependencies": {
+    "compression": "^1.7.4",
     "dotenv": "^17.2.3",
     "ejs": "^3.1.10",
     "express": "^5.2.1",
+    "express-rate-limit": "^7.1.5",
     "express-session": "^1.18.2",
+    "helmet": "^7.1.0",
     "multer": "^2.0.2",
     "mysql2": "^3.16.0",
     "nodemon": "^3.1.11",
     "sequelize": "^6.37.7",
     "serve-favicon": "^2.5.1",
+    "winston": "^3.11.0",
     "zod": "^4.2.1"
   }
 }

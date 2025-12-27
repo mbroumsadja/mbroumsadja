@@ -1,14 +1,15 @@
 import { Sequelize } from "sequelize";
 import "dotenv/config";
+import logger from '../config/logger.js';
 
 const sequelize = new Sequelize(
-  process.env.database,
-  process.env.user,
-  process.env.password,
+  process.env.DB_NAME || process.env.database,
+  process.env.DB_USER || process.env.user,
+  process.env.DB_PASSWORD || process.env.password,
   {
-    host: process.env.host,
+    host: process.env.DB_HOST || process.env.host,
     dialect: "mysql",
-    logging: true,
+    logging: process.env.NODE_ENV === 'production' ? false : logger.debug.bind(logger),
   }
 );
 
