@@ -37,6 +37,28 @@ nav {
     height: 70px;
 }
 
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo-image {
+    height: 40px;
+    width: auto;
+    transition: transform 0.2s ease;
+}
+
+.logo-image:hover {
+    transform: scale(1.05);
+}
+
+.logo a {
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+}
+
+/* Ancien style pour h1 (maintenu pour compatibilité) */
 .nav-container h1 {
     font-size: 1.8rem;
     font-weight: bold;
