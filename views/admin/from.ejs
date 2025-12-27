@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>un article - MBROUMSADJA</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="nav-container">
+                <h1><a href="/">MBROUMSADJA</a></h1>
+                <ul>
+                    <li><a href="/">Accueil</a></li>
+                    <li><a href="/admin">Admin</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <div class="container">
+            <h2><%= article ? 'Modifier' : 'Créer' %> un article</h2>
+
+            <form action="<%= article ? '/article/' + article.id : '/article' %>"
+                  method="POST"
+                  enctype="multipart/form-data"
+                  class="article-form">
+
+                <!-- Champ caché pour method-override (PATCH pour modification) -->
+                <% if (article) { %>
+                    <input type="hidden" name="_method" value="PATCH">
+                <% } %>
+
+                <div class="form-group">
+                    <label for="titre">Titre de l'article *</label>
+                    <input type="text" id="titre" name="titre"
+                           value="<%= article ? article.titre : '' %>"
+                           required maxlength="255">
+                </div>
+
+                <div class="form-group">
+                    <label for="auteur">Auteur *</label>
+                    <input type="text" id="auteur" name="auteur"
+                           value="<%= article ? article.auteur : '' %>"
+                           required maxlength="100">
+                </div>
+
+                <div class="form-group">
+                    <label for="categorie">Catégorie *</label>
+                    <select id="categorie" name="categorie" required>
+                        <option value="">Choisir une catégorie</option>
+                        <option value="technologie" <%= article && article.categorie === 'technologie' ? 'selected' : '' %>>Technologie</option>
+                        <option value="développement" <%= article && article.categorie === 'développement' ? 'selected' : '' %>>Développement</option>
+                        <option value="design" <%= article && article.categorie === 'design' ? 'selected' : '' %>>Design</option>
+                        <option value="business" <%= article && article.categorie === 'business' ? 'selected' : '' %>>Business</option>
+                        <option value="tutoriel" <%= article && article.categorie === 'tutoriel' ? 'selected' : '' %>>Tutoriel</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="corps">Contenu de l'article *</label>
+                    <textarea id="corps" name="corps" rows="15" required>
+                        <%- article ? article.corps : '' %>
+                    </textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="reference">Référence (optionnel)</label>
+                    <input type="text" id="reference" name="reference"
+                           value="<%= article ? article.reference : '' %>"
+                           placeholder="Lien vers une source externe">
+                </div>
+
+                <div class="form-group">
+                    <label for="image">Image de l'article (optionnel)</label>
+                    <input type="file" id="image" name="image" accept="image/*">
+                    <% if (article && article.lien_image) { %>
+                        <div class="current-image">
+                            <p>Image actuelle :</p>
+                            <img src="<%= article.lien_image %>"
+                                 alt="Image actuelle de l'article <%= article ? article.titre : '' %>"
+                                 style="max-width: 200px; margin-top: 10px; border-radius: 4px;">
+                        </div>
+                    <% } %>
+                    <small>Formats acceptés : JPG, PNG, GIF. Taille max : 5MB</small>
+                </div>
+
+                <div class="form-actions">
+                    <button type="submit" class="btn btn-primary">
+                        <%= article ? 'Modifier' : 'Créer' %> l'article
+                    </button>
+                    <a href="/admin" class="btn btn-secondary">Annuler</a>
+                </div>
+            </form>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 MBROUMSADJA. Tous droits réservés.</p>
+        </div>
+    </footer>
+
+    <script src="/static/admin.js"></script>
+</body>
+</html>

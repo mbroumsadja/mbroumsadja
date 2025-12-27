@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MBROUMSADJA - Blog</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="nav-container">
+                <h1><a href="/">MBROUMSADJA</a></h1>
+                <ul>
+                    <li><a href="/">Accueil</a></li>
+                    <% if (typeof user !== 'undefined' && user) { %>
+                        <li><a href="/profil"><%= user.prenom %> <%= user.nom %></a></li>
+                    <% } else { %>
+                        <li><a href="/inscription">Inscription</a></li>
+                        <li><a href="/connexion">Connexion</a></li>
+                    <% } %>
+                    <li><a href="/admin">Admin</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <div class="container">
+            <h2>Derniers Articles</h2>
+
+            <div class="articles-grid">
+                <% if (typeof articles !== 'undefined' && articles.length > 0) { %>
+                    <% articles.forEach(article => { %>
+                        <article class="article-card">
+                            <% if (article.lien_image) { %>
+                                <img src="<%= article.lien_image %>" alt="<%= article.titre %>" class="article-image">
+                            <% } %>
+                            <div class="article-content">
+                                <h3><a href="/article/<%= article.id %>"><%= article.titre %></a></h3>
+                                <p class="article-meta">
+                                    Par <%= article.auteur %> • <%= article.categorie %> •
+                                    <%= new Date(article.createdAt).toLocaleDateString('fr-FR') %>
+                                </p>
+                                <p class="article-excerpt"><%= article.corps.substring(0, 150) %>...</p>
+                                <a href="/article/<%= article.id %>" class="read-more">Lire la suite</a>
+                            </div>
+                        </article>
+                    <% }) %>
+                <% } else { %>
+                    <p>Aucun article trouvé.</p>
+                <% } %>
+            </div>
+
+            <!-- Pagination supprimée - remplacée par chargement infini -->
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 MBROUMSADJA. Tous droits réservés.</p>
+        </div>
+    </footer>
+
+    <script src="/static/index.js"></script>
+</body>
+</html>

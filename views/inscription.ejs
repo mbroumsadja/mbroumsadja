@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inscription - MBROUMSADJA</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="nav-container">
+                <h1><a href="/">MBROUMSADJA</a></h1>
+                <ul>
+                    <li><a href="/">Accueil</a></li>
+                    <% if (user) { %>
+                        <li><a href="/profil"><%= user.prenom %> <%= user.nom %></a></li>
+                    <% } else { %>
+                        <li><a href="/connexion">Connexion</a></li>
+                    <% } %>
+                    <li><a href="/admin">Admin</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <div class="container">
+            <h2>Inscription</h2>
+            <form id="inscriptionForm" action="/client" method="POST">
+                <div class="form-group">
+                    <label for="nom">Nom :</label>
+                    <input type="text" id="nom" name="nom" required>
+                </div>
+                <div class="form-group">
+                    <label for="prenom">Prénom :</label>
+                    <input type="text" id="prenom" name="prenom" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email :</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="mot_de_passe">Mot de passe :</label>
+                    <input type="password" id="mot_de_passe" name="mot_de_passe" required>
+                </div>
+                <button type="submit">S'inscrire</button>
+            </form>
+            <p>Déjà inscrit ? <a href="/connexion">Se connecter</a></p>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 MBROUMSADJA. Tous droits réservés.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('inscriptionForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const formData = new FormData(e.target);
+            const data = Object.fromEntries(formData);
+
+            try {
+                const response = await fetch('/client', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(data)
+                });
+
+                if (response.ok) {
+                    alert('Inscription réussie !');
+                    window.location.href = '/';
+                } else {
+                    const error = await response.json();
+                    alert('Erreur : ' + error.error);
+                }
+            } catch (err) {
+                alert('Erreur réseau');
+            }
+        });
+    </script>
+</body>
+</html>

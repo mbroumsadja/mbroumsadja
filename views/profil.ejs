@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profil - MBROUMSADJA</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="nav-container">
+                <h1><a href="/">MBROUMSADJA</a></h1>
+                <ul>
+                    <li><a href="/">Accueil</a></li>
+                    <li><a href="/profil">Profil</a></li>
+                    <li><a href="/admin">Admin</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <div class="container">
+            <h2>Mon Profil</h2>
+            <div class="profile-info">
+                <p><strong>Nom :</strong> <%= user.nom %></p>
+                <p><strong>Prénom :</strong> <%= user.prenom %></p>
+                <p><strong>Email :</strong> <%= user.email %></p>
+            </div>
+            <a href="/" class="btn btn-primary">Retour à l'accueil</a>
+            <a href="/deconnexion" class="btn btn-secondary">Déconnexion</a>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 MBROUMSADJA. Tous droits réservés.</p>
+        </div>
+    </footer>
+</body>
+</html>
