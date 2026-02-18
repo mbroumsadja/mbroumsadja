@@ -16,7 +16,6 @@ const app = express();
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-// Sécurité - Helmet
 app.use(helmet({
     contentSecurityPolicy: {
         directives: {
@@ -31,20 +30,19 @@ app.use(helmet({
 // Compression
 app.use(compression());
 
-// Rate limiting
-const limiter = rateLimit({
-    windowMs: 15 * 60 * 1000, // 15 minutes
-    max: 100, // limit each IP to 100 requests per windowMs
-    message: 'Trop de requêtes depuis cette adresse IP, veuillez réessayer plus tard.',
-    standardHeaders: true,
-    legacyHeaders: false,
-});
-app.use(limiter);
+// // Rate limiting
+// const limiter = rateLimit({
+//     windowMs: 500 * 60 * 1000,
+//     max: 100,
+//     message: 'Trop de requêtes depuis cette adresse IP, veuillez réessayer plus tard.',
+//     standardHeaders: true,
+//     legacyHeaders: false,
+// });
+// app.use(limiter);
 
-// Rate limiting plus strict pour les routes d'authentification
 const authLimiter = rateLimit({
-    windowMs: 15 * 60 * 1000, // 15 minutes
-    max: 5, // limit each IP to 5 requests per windowMs
+    windowMs: 100 * 60 * 1000,
+    max: 100, 
     message: 'Trop de tentatives de connexion, veuillez réessayer plus tard.',
     standardHeaders: true,
     legacyHeaders: false,
@@ -60,13 +58,13 @@ app.use(express.urlencoded({ extended: true, limit: '10mb' }));
 
 // Configuration des sessions
 app.use(session({
-    secret: process.env.SESSION_SECRET || 'votre_secret_session', // Utiliser variable d'environnement
+    secret: process.env.SESSION_SECRET || 'votre_secret_session', 
     resave: false,
     saveUninitialized: false,
     cookie: {
-        secure: isProduction, // HTTPS only en production
+        secure: isProduction, 
         httpOnly: true,
-        maxAge: 24 * 60 * 60 * 1000 // 24 heures
+        maxAge: 24 * 60 * 60 * 1000 
     }
 }));
 

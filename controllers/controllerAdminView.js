@@ -36,7 +36,7 @@ export const getAdminDashboard = async (req, res) => {
 
 export const showCreateArticleForm = async (req, res) => {
     const article = null;
-    res.render('admin/from',{article}); // Ne pas passer article pour la création
+    res.render('admin/from',{article});
 };
 
 export const showEditArticleForm = async (req, res) => {

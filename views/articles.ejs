@@ -12,19 +12,19 @@
             <div class="nav-container">
                 <div class="logo">
                     <a href="/">
-                        <img src="/static/logo.png" alt="MBROUMSADJA Logo" class="logo-image"> .
                         <strong><h1>MBROUMSADJA</h1></strong>
                     </a>
                 </div>
                 <ul>
                     <li><a href="/">Accueil</a></li>
+                    <li><a href="/propos">pros</a></li>
                     <% if (user) { %>
                         <li><a href="/profil"><%= user.prenom %> <%= user.nom %></a></li>
                     <% } else { %>
                         <li><a href="/inscription">Inscription</a></li>
                         <li><a href="/connexion">Connexion</a></li>
                     <% } %>
-                    <li><a href="/admin">Admin</a></li>
+                    
                 </ul>
             </div>
         </nav>
@@ -39,6 +39,7 @@
                 <% if (articles && articles.length > 0) { %>
                     <% articles.forEach(article => { %>
                         <div class="article-item">
+                            <img src="<%= article.lien_image %>" alt="<%= article.titre %>" class="article-image">
                             <h3><a href="/article/<%= article.id %>"><%= article.titre %></a></h3>
                             <p>Par <%= article.auteur %> • <%= new Date(article.createdAt).toLocaleDateString('fr-FR') %></p>
                             <div class="article-actions">

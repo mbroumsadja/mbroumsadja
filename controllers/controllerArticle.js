@@ -110,16 +110,16 @@ export const getArticleById = async (req, res) => {
                 return res.render('article', { article: null });
             }
         }
-
         // Récupérer les commentaires associés
         const commentaires = await Commentaire.findAll({
-            where: { id: article.id },
+            where: { id_article: article.id },
             order: [['createdAt', 'DESC']]
         });
 
         if (req.headers.accept && req.headers.accept.includes('application/json')) {
             res.status(200).json(article);
         } else {
+
             res.render('article', { article, commentaires });
         }
     } catch (error) {

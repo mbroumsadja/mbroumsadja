@@ -12,19 +12,19 @@
             <div class="nav-container">
                 <div class="logo">
                     <a href="/">
-                        <img src="/static/logo.png" alt="MBROUMSADJA Logo" class="logo-image"> .
                         <strong><h1>MBROUMSADJA</h1></strong>
                     </a>
                 </div>
                 <ul>
                     <li><a href="/">Accueil</a></li>
+                    <li><a href="/propos">pros</a></li>
                     <% if (typeof user !== 'undefined' && user) { %>
                         <li><a href="/profil"><%= user.prenom %> <%= user.nom %></a></li>
                     <% } else { %>
                         <li><a href="/inscription">Inscription</a></li>
                         <li><a href="/connexion">Connexion</a></li>
                     <% } %>
-                    <li><a href="/admin">Admin</a></li>
+                    
                 </ul>
             </div>
         </nav>
@@ -39,16 +39,16 @@
                     <% articles.forEach(article => { %>
                         <article class="article-card">
                             <% if (article.lien_image) { %>
+                                <a href="/article/<%= article.id %>">
                                 <img src="<%= article.lien_image %>" alt="<%= article.titre %>" class="article-image">
+                                </a>
                             <% } %>
-                            <div class="article-content">
+                            <div class="article-content-presentation">
                                 <h3><a href="/article/<%= article.id %>"><%= article.titre %></a></h3>
                                 <p class="article-meta">
                                     Par <%= article.auteur %> • <%= article.categorie %> •
                                     <%= new Date(article.createdAt).toLocaleDateString('fr-FR') %>
                                 </p>
-                                <p class="article-excerpt"><%= article.corps.substring(0, 150) %>...</p>
-                                <a href="/article/<%= article.id %>" class="read-more">Lire la suite</a>
                             </div>
                         </article>
                     <% }) %>

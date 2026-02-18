@@ -15,6 +15,7 @@ import { requireAdmin } from "./middleware/auth.js";
 import upload from "./middleware/multerConfig.js";
 
 route.get("/", renderArticleBlog);
+
 route.get("/inscription", (req, res) => {
     res.render("inscription");
 });
@@ -24,12 +25,16 @@ route.get("/connexion", (req, res) => {
 });
 
 // --- ROUTES COMMENTAIRES ---
-route.post("/commentaire", validateCommentaire, createCommentaire);
+route.post("/commentaire/:id", validateCommentaire, createCommentaire);
 
 // --- ROUTES CLIENTS ---
 route.post("/client", validateClient, createClient);
 route.post("/connexion", loginClient);
 route.get("/profil", getProfile);
+route.get("/propos",(req, res)=>{
+    res.render('a_propos')
+})
+
 route.get("/deconnexion", (req, res) => {
     req.session.destroy();
     res.redirect('/');
