@@ -2,16 +2,8 @@
 <a href="mailto:mbroumsadjaemmanuel645@gmail.com"><img src="https://img.shields.io/badge/-Email_Me-EA4335?style=flat-square&logo=gmail&logoColor=white" /></a>
 <a href="https://www.linkedin.com/in/mbroumsadja-emmanuel-267b8527b/"><img src="https://img.shields.io/badge/-LinkedIn-0A66C2?style=flat-square&logo=linkedin&logoColor=white" /></a>
 
-<br/><br/>
-
-<!-- TYPING EFFECT -->
-<a href="https://git.io/typing-svg"><img src="https://readme-typing-svg.herokuapp.com?font=JetBrains+Mono&weight=600&size=24&duration=3000&pause=1000&color=A960FF&center=true&vCenter=true&multiline=true&repeat=true&width=650&height=100&lines=%F0%9F%92%A1+Backend%20%7C%20DevOps%20%7C%20Cloud;%F0%9F%94%A5+Node.js%20%7C%20Next.js%20%7C%20Python%20%7C%20C%2B%2B;%F0%9F%9A%80+Docker%20%7C%20Kubernetes%20%7C%20AWS%20%7C%20SSL%20%7C%20SSH" alt="Typing SVG" /></a>
-
-</div>
-
----
-
 <img align="right" width="320" src="https://raw.githubusercontent.com/abhisheknaiidu/abhisheknaiidu/master/code.gif" alt="coding gif"/>
+<br></br>
 
 ### 🧑‍💻 Qui suis-je ?
 
