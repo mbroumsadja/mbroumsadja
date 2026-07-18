@@ -1,8 +1,3 @@
-<div align="center">
-
-<!-- ANIMATED HEADER -->
-<img width="100%" src="https://capsule-render.vercel.app/api?type=venom&color=gradient&customColorList=0,2,2,5,30&height=300&section=header&text=MBROUMSADJA%20EMMANUEL&fontSize=50&fontColor=fff&animation=twinkling&fontAlignY=35&desc=🚀%20Backend%20%7C%20DevOps%20%7C%20Cloud%20Engineer&descAlignY=55&descSize=18&descColor=fff"/>
-
 <!-- SOCIAL BADGES -->
 <a href="mailto:mbroumsadjaemmanuel645@gmail.com"><img src="https://img.shields.io/badge/-Email_Me-EA4335?style=flat-square&logo=gmail&logoColor=white" /></a>
 <a href="https://www.linkedin.com/in/mbroumsadja-emmanuel-267b8527b/"><img src="https://img.shields.io/badge/-LinkedIn-0A66C2?style=flat-square&logo=linkedin&logoColor=white" /></a>
