@@ -71,7 +71,7 @@ Je conçois, déploie et optimise des **APIs, services backend, infrastructures 
 
 ## 🌱 En ce moment
 
-- 🔭 Je travaille sur : *(ton projet actuel)*
+- 🔭 Je travaille sur : E-impression
 - 📚 J'approfondis : Kubernetes, CI/CD, sécurité des infrastructures
 - 💬 Parle-moi de : APIs, DevOps, automatisation, entrepreneuriat tech
 - 🤝 Ouvert à : collaborations, missions freelance, projets open source
