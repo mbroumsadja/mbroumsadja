@@ -1,16 +1,14 @@
 <div align="center">
 
-<img src="https://capsule-render.vercel.app/api?type=waving&color=0:0A66C2,100:2496ED&height=180&section=header&text=Mbroumsadja%20Emmanuel&fontSize=42&fontColor=ffffff&fontAlignY=38&desc=D%C3%A9veloppeur%20Backend%20%26%20DevOps&descAlignY=58&descSize=18" alt="Header" />
+# Mbroumsadja Emmanuel
 
-<a href="https://readme-typing-svg.demolab.com">
-  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&pause=1200&color=2496ED&center=true&vCenter=true&width=560&lines=Cr%C3%A9er.+Innover.+Am%C3%A9liorer.+Automatiser.;APIs+%26+services+backend+fiables;Conteneurisation+%26+d%C3%A9ploiement+cloud;Bas%C3%A9+%C3%A0+Garoua%2C+Cameroun+%F0%9F%87%A8%F0%9F%87%B2" alt="Typing SVG" />
-</a>
+**Développeur Backend & DevOps** · Garoua, Cameroun 🇨🇲
 
-<br/>
+*Créer. Innover. Améliorer. Automatiser.*
 
 <a href="mailto:mbroumsadjaemmanuel645@gmail.com"><img src="https://img.shields.io/badge/-Email-EA4335?style=for-the-badge&logo=gmail&logoColor=white" alt="Email" /></a>
 <a href="https://www.linkedin.com/in/mbroumsadja-emmanuel-267b8527b/"><img src="https://img.shields.io/badge/-LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" /></a>
-<img src="https://komarev.com/ghpvc/?username=mbroumsadja&style=for-the-badge&color=blue&label=VUES" alt="Profile views" />
+<a href="https://github.com/mbroumsadja"><img src="https://img.shields.io/github/followers/mbroumsadja?style=for-the-badge&logo=github&label=Followers" alt="Followers" /></a>
 
 </div>
 
@@ -48,7 +46,7 @@ Je conçois, déploie et optimise des **APIs, services backend, infrastructures 
 
 ## 📌 Projets mis en avant
 
-<!-- Remplace ces exemples par tes vrais projets (épingle-les aussi sur ton profil) -->
+<!-- Remplace ces exemples par tes vrais projets -->
 
 | Projet | Description | Stack |
 |:---|:---|:---|
@@ -58,20 +56,9 @@ Je conçois, déploie et optimise des **APIs, services backend, infrastructures 
 
 ---
 
-## 📊 Statistiques GitHub
-
-<div align="center">
-
-<img height="170" src="https://github-readme-stats.vercel.app/api?username=mbroumsadja&show_icons=true&theme=tokyonight&hide_border=true&count_private=true" alt="GitHub stats" />
-<img height="170" src="https://github-readme-stats.vercel.app/api/top-langs/?username=mbroumsadja&layout=compact&theme=tokyonight&hide_border=true" alt="Top languages" />
-
-</div>
-
----
-
 ## 🌱 En ce moment
 
-- 🔭 Je travaille sur : E-impression
+- 🔭 Je travaille sur : *(ton projet actuel)*
 - 📚 J'approfondis : Kubernetes, CI/CD, sécurité des infrastructures
 - 💬 Parle-moi de : APIs, DevOps, automatisation, entrepreneuriat tech
 - 🤝 Ouvert à : collaborations, missions freelance, projets open source
@@ -85,7 +72,5 @@ Le plus simple : [par email](mailto:mbroumsadjaemmanuel645@gmail.com) ou sur [Li
 <div align="center">
 
 `mbroumsadja 👌`
-
-<img src="https://capsule-render.vercel.app/api?type=waving&color=0:0A66C2,100:2496ED&height=100&section=footer" alt="Footer" />
 
 </div>
