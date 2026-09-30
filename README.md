@@ -50,9 +50,9 @@ Je conçois, déploie et optimise des **APIs, services backend, infrastructures 
 
 | Projet | Description | Stack |
 |:---|:---|:---|
-| [**nom-du-projet-1**](https://github.com/mbroumsadja/nom-du-projet-1) | Une phrase sur le problème résolu et l'impact | `Node.js` `Express` `MongoDB` |
-| [**nom-du-projet-2**](https://github.com/mbroumsadja/nom-du-projet-2) | Une phrase sur le problème résolu et l'impact | `Docker` `AWS` `CI/CD` |
-| [**nom-du-projet-3**](https://github.com/mbroumsadja/nom-du-projet-3) | Une phrase sur le problème résolu et l'impact | `Python` `API` |
+| [**Campus educatif api**](https://github.com/mbroumsadja/campus-edu-backend) | Une phrase sur le problème résolu et l'impact | `Node.js` `Express` `Postgres` |
+| [**E-impression**](https://github.com/mbroumsadja/e-impression) | Une phrase sur le problème résolu et l'impact | `Docker` `AWS` `CI/CD` |
+| [**mbroumsadja**](https://github.com/mbroumsadja/mbroumsadja) | Une phrase sur le problème résolu et l'impact | `Python` `API` |
 
 ---
 
