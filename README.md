@@ -24,7 +24,7 @@ Je m'oriente vers le machine learning et la data.
 | [CampusEdu, API](https://github.com/mbroumsadja/campus-edu-backend) | Backend de la plateforme d'archivage de cours et de sujets : recherche publique, téléchargement limité par IP, espace admin protégé | Node.js, Express, Sequelize, PostgreSQL, JWT |
 | [CampusEdu, Mobile](https://github.com/mbroumsadja/campus-edu-mobile) | Application Android pour chercher et télécharger des documents, avec cache local | Kotlin, Jetpack Compose, Room |
 | [CampusEdu, Page](https://github.com/mbroumsadja/campus-edu-page) | Page de présentation avec les versions APK à télécharger | Vercel |
-| [Planificateur de stage](https://github.com/mbroumsadja/Planning-) | Génération du planning d'un stage selon les règles de chaque hôpital, avec export PDF et Word | Node.js |
+| [Planificateur de Stage](https://github.com/mbroumsadja/Planning-) | Génération du planning d'un stage selon les règles de chaque hôpital, avec export PDF et Word | Node.js |
 | [Site de l'Université de Garoua](https://github.com/mbroumsadja/universite-garoua) | Formations, admissions, vie étudiante, recherche et actualités | Next.js, TypeScript, Tailwind CSS |
 | [Power Spirit](https://github.com/mbroumsadja/power-spirit) | Projet présenté en démo sur ma chaîne YouTube | |
 
